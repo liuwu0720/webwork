@@ -34,6 +34,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my JSP page. <br>
-    <input type="button" value="点击" onclick="ajjson();return false;" />
+    <input type="button" value="点击1111111111" onclick="ajjson();return false;" />
   </body>
 </html>
