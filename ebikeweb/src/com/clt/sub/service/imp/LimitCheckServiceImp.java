@@ -1,0 +1,56 @@
+package com.clt.sub.service.imp;
+
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.clt.sub.dao.ILimitCheckDao;
+import com.clt.sub.model.TLimitCheck;
+import com.clt.sub.service.ILimitCheckService;
+
+/**
+ * @Package com.clt.sub.service.imp
+ * @Description: 空闲运力查看权利服务类
+ * @author hjx
+ * @date 2014年10月10日 下午4:07:29
+ * @version V1.0
+ */
+@Service
+public class LimitCheckServiceImp implements ILimitCheckService
+{
+	@Autowired
+	private ILimitCheckDao limitCheckDao;
+	
+	/**
+	 * @Description: 保存可查看空闲运力权限信息
+	 * @param limitCheck
+	 * @author hjx
+	 * @create_date 2014年10月10日 下午4:07:29
+	 */
+	public void save( TLimitCheck limitCheck )
+	{
+		limitCheckDao.save( limitCheck );
+		
+	}
+	
+	/**
+	 * @Description: 根据用户id，和空闲运力信息id 判断当前用户是否可查看该空闲运力信息
+	 * @param userid
+	 * @param spareId
+	 * @return
+	 * @author hjx
+	 * @create_date 2014年10月10日 下午4:07:29
+	 */
+	public boolean getByUserIdAndSpareId( int userid , int spareId )
+	{
+		List< TLimitCheck > limitChecks = limitCheckDao.findByPropertys( new String[] {
+		        "IUser" , "ISpareCapacity" } , new Object[] { userid , spareId } );
+		if ( CollectionUtils.isNotEmpty( limitChecks ) )
+		{
+			return true;
+		}
+		return false;
+	}
+}

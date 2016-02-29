@@ -1,0 +1,83 @@
+ul#slider {
+	margin:0;
+	padding:0;
+	width:618px;
+	height:240px;
+	list-style: none;
+	overflow: hidden;
+	list-style-type:none;
+	position: relative;	
+}
+ul#slider li{ float:left;}
+ul#slider li a img{ width:618px; height:240px;}
+div.anythingSlider {
+	display: block;
+	margin:0;
+	overflow: visible !important; /* needed for Opera and Safari */
+	width:618px;
+	height:240px;
+	overflow: hidden;	
+	position: relative;
+}
+/* anythingSlider viewport window */
+div.anythingSlider .anythingWindow {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	width:618px;
+	height:240px;
+	overflow: hidden;	
+}
+/* anythingSlider base (original element) */
+.anythingBase {
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	overflow: visible !important;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+/* all panels inside the slider */
+.anythingBase .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.anythingBase .panel.vertical {
+	float: none;
+}
+
+/* Navigation size window */
+div.anythingSlider .anythingControls .anythingNavWindow { overflow: hidden; float: left; }
+
+div.anythingSlider .anythingWindow { width:618px; height:240px;overflow: hidden; position: relative;}
+.anythingBase .panel {
+    background: none repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.anythingControls{ position:absolute; right:10px; bottom:20px;}
+.anythingControls li{ float:left; width:19px; height:19px; margin:0 5px 0 0;}
+.anythingControls ul a{ display:inline-block; width:19px; height:19px; line-height:19px; background:url(../image/home/ad_num.png) no-repeat; text-align:center; font-weight:bold; color:#FFF;}
+.anythingControls ul a:hover{ color:#FFF; background:url(../image/home/ad_active.png) no-repeat;}
+.anythingControls ul a.cur{ color:#FFF; background:url(../image/home/ad_active.png) no-repeat;}
+
+.anythingSlider, .anythingWindow, .anythingBase, .anythingBase li {
+   height: 240px !important;/*for IE6*/
+}
+
+/* Arrow */
+.arrow{ position:absolute;  top:50%; display:block; margin-top:-30px; width:59px; height:59px; text-indent:-999em; overflow:hidden;}
+.back{ left:-80px; background:url(../image/home/ad_prev.png) no-repeat;}
+.forward{ right:-80px; background:url(../image/home/ad_next.png) no-repeat;}
+.back a,.forward a{ display:block; width:59px; height:59px;}
